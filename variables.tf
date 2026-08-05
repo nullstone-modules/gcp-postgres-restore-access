@@ -8,6 +8,12 @@ EOF
   default = {}
 }
 
+variable "strict_password_policy" {
+  type        = bool
+  default     = true
+  description = "Enforce strict password policy which ensures there is one uppercase, one lowercase, one numeric, and one special character"
+}
+
 variable "owner_role" {
   type    = string
   default = ""
