@@ -34,11 +34,6 @@ locals {
   ])
 }
 
-resource "random_password" "this" {
-  length  = 32
-  special = false
-}
-
 data "google_service_account_id_token" "invoker" {
   target_audience        = coalesce(local.db_admin_func_url, "https://missing-db-admin-url")
   target_service_account = local.db_admin_invoker.email
