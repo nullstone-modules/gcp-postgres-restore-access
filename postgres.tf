@@ -17,9 +17,8 @@ locals {
 }
 
 locals {
-  target_database = coalesce(var.target_database, local.block_name)
-  owner_role      = coalesce(var.owner_role, local.target_database)
-  username        = "ns_restore_${random_string.resource_suffix.result}"
+  owner_role = coalesce(var.owner_role, local.block_name)
+  username   = "ns_restore_${random_string.resource_suffix.result}"
 
   // Connects to `postgres` rather than the target: a session connected to a database cannot rename
   // it, and the swap renames two.
