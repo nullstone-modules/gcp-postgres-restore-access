@@ -17,7 +17,8 @@ resource "restapi_object" "role" {
     name     = local.username
     password = random_password.this.result
     attributes = {
-      createDb = true
+      createDb    = true
+      replication = true
     }
     useExisting = true
   })
